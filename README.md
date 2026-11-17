@@ -88,7 +88,13 @@ copy .env.example .env
 php artisan key:generate
 ```
 
-### 6. Crear la base de datos
+### 6. Limpiar la configuración
+
+```bash
+php artisan config:clear
+```
+
+### 7. Crear la base de datos
 
 Desde phpMyAdmin, crea una base de datos llamada:
 
@@ -107,7 +113,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 7. Configurar el usuario de acceso
+### 8. Configurar el usuario de acceso
 
 En el archivo `.env`, agrega un correo y una contraseña para el usuario docente:
 
@@ -118,19 +124,21 @@ DOCENTE_CLAVE=coloca_una_contrasena_segura
 
 Estos datos serán utilizados para crear el usuario que permitirá ingresar al sistema.
 
-### 8. Ejecutar las migraciones
+**Importante:** utiliza una contraseña propia y segura. No publiques tu archivo `.env` en GitHub.
+
+### 9. Ejecutar las migraciones
 
 ```bash
 php artisan migrate
 ```
 
-### 9. Crear el usuario docente
+### 10. Crear el usuario docente
 
 ```bash
 php artisan db:seed --class=DocenteSeeder
 ```
 
-### 10. Iniciar el servidor
+### 11. Iniciar el servidor
 
 ```bash
 php artisan serve
@@ -159,11 +167,19 @@ La aplicación utiliza MySQL para almacenar la información de los estudiantes y
 
 La tabla principal es `estudiantes`, donde se guardan los datos personales y académicos de cada estudiante. También se utiliza la tabla `users` de Laravel para administrar el acceso al sistema.
 
+## Documentación adicional
+
+El proyecto incluye los siguientes archivos de documentación:
+
+- `README.md`: contiene la descripción del proyecto y las instrucciones para su instalación y ejecución.
+- `registro-pruebas.md`: presenta los casos de prueba realizados, los resultados obtenidos y el estado de cada prueba.
+
 ## Autoría
 
 Proyecto académico desarrollado para la asignatura Programación Web II.
 
-**Repositorio en GitHub:**  
+**Repositorio en GitHub:**
+
 https://github.com/Jeisonshr/sistema-estudiantes-laravel
 
 ## Consideraciones
